@@ -1,0 +1,10 @@
+<div *ngFor="let bike of bikes">
+  <img src="{{bike['url']}}" alt="" style="height:300px;width:300px;">
+  <p>Title: {{bike['title']}}</p>
+  <p>Price: {{bike['price']}}</p>
+  <p>Location: {{bike['location']}}</p>
+  <p>Description: {{bike['description']}}</p>
+  <button *ngIf="bike._user == id" (click)="remove(bike._id)">Delete</button>
+  <button *ngIf="bike._user != id"(click)="contact(bike._id)">Contact</button>
+
+</div>

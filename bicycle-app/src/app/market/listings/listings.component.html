@@ -1,0 +1,24 @@
+<h2>Create Listing</h2>
+<form (submit)="newListing()">
+    Title: <input type="text" name="title" [(ngModel)]="title">
+    Price: <input type="text" name="price" [(ngModel)]="price">
+    Location: <input type="text" name="location" [(ngModel)]="location">
+    Img Url: <input type="text" name="url" [(ngModel)]="url">
+    Description <textarea name="" name="description" [(ngModel)]="description"></textarea>
+    <input type="submit" value="Create">
+</form>
+<br>
+<h2>Edit/Delete Listings</h2>
+
+<div *ngFor="let bike of listings">
+    <img src="{{bike['url']}}" alt="" style="height:300px;width:300px;">
+    <form (ngSubmit)="update(bike._id, bike)">
+        Title: <input type="text" name="title" [(ngModel)]="bike.title">
+        Price: <input type="text" name="price" [(ngModel)]="bike.price">
+        Location: <input type="text" name="location" [(ngModel)]="bike.location">
+        Img Url: <input type="text" name="url" [(ngModel)]="bike.url">
+        Description <textarea name="description" [(ngModel)]="bike.description"></textarea>
+        <button>Update</button>
+    </form>
+    <button (click)="remove(bike._id)">Delete</button>
+</div>

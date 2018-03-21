@@ -1,0 +1,8 @@
+<h2>Bike of the Day</h2>
+<div *ngIf="bike">
+    <img [src]="bike.url" alt="" style="height:300px;width:300px;">
+    <p>Title: {{bike.title}}</p>
+    <p>Price: {{bike.price}}</p>
+    <p>Location: {{bike.location}}</p>
+    <p>Description: {{bike.description}}</p>
+</div>

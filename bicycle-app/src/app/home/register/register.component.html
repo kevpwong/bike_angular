@@ -1,0 +1,14 @@
+<h3>Register</h3>
+<form #form="ngForm" (submit)="add()">
+    First Name: <input type="text" name="fname" [(ngModel)]="fname" required> <br>
+    <p *ngIf="error && errorMessage.fname">{{errorMessage.fname.message}}</p>
+    Last Name: <input type="text" name="lname" [(ngModel)]="lname" required> <br>
+    <p *ngIf="error && errorMessage.lname">{{errorMessage.lname.message}}</p>
+    Email: <input type="text" name="email" [(ngModel)]="email" required> <br>
+    <p *ngIf="error && errorMessage.email">{{errorMessage.email.message}}</p>
+    Password: <input type="text" name="password" [(ngModel)]="password" required> <br>
+    <p *ngIf="error && errorMessage.password">{{errorMessage.password.message}}</p>
+    Confirm: <input type="text" name="confirm" [(ngModel)]="confirm" required> <br>
+    <p *ngIf="error && noMatchError">{{noMatchError}}</p>
+    <input type="submit" value="Register" [disabled]="!form.valid"> <br>
+  </form>
